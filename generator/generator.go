@@ -40,6 +40,7 @@ type generatorConfig struct {
 	enableZfs               bool
 	zfsImportParams         string
 	zfsCachePath            string
+	welcomeMessage          string
 
 	// virtual console configs
 	enableVirtualConsole     bool
@@ -382,6 +383,7 @@ func (img *Image) appendInitConfig(conf *generatorConfig, kmod *Kmod, vconsole *
 	initConfig.EnableMdraid = conf.enableMdraid
 	initConfig.EnableZfs = conf.enableZfs
 	initConfig.ZfsImportParams = conf.zfsImportParams
+	initConfig.WelcomeMessage = conf.welcomeMessage
 
 	if conf.networkConfigType == netDhcp {
 		initConfig.Network = &InitNetworkConfig{}

@@ -837,6 +837,7 @@ func boost() error {
 	if err := configureVirtualConsole(); err != nil {
 		return err
 	}
+	fmt.Print(config.WelcomeMessage)
 
 	diskBy := []string{"id", "partuuid", "path", "uuid"}
 	for _, by := range diskBy {
